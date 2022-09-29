@@ -2,7 +2,6 @@
 
 //Gracias a Babel podemos utilizar esta sintaxis para usar las librerías debido a esto se usa  npx babel-node src/index.js
 import {express} from "express";
-import {exphbs} from 'express-handlebars'
 import indexRoutes from '../src/routes/index';
 
 const app = express();
