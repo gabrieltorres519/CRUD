@@ -1,7 +1,3 @@
-<ul>
-
-</ul>
-
 
 <table>
 
@@ -18,7 +14,7 @@
         {{#each tasks}}
         <tr>
             <td>
-                {{@Index}}
+                {{@index}}
             </td>
             <td>
                 {{title}}
@@ -27,7 +23,7 @@
                 {{description}}
             <td>
                 <button>Realizado</button>
-                <button>Editar</button>
+                <a href="/edit">Editar</a>
                 <button>Eliminar</button>
             </td>
         </tr>
