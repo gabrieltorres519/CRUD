@@ -7,7 +7,7 @@
 
     <thead>
         <tr>
-            {{!-- <th>N.</th> --}}
+            <th>N.</th>
             <th>Titulo</th>
             <th>Descripción</th>
             <th>Acciones</th>
@@ -17,6 +17,9 @@
     <tbody>
         {{#each tasks}}
         <tr>
+            <td>
+                {{@Index}}
+            </td>
             <td>
                 {{title}}
             </td>
