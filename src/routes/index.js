@@ -4,8 +4,9 @@ import Task from "../models/Task";
 
 const router = Router();
 
-router.get('/',(req,res)=>{
-    res.render('index')
+router.get('/', async (req,res)=>{
+    const tasks = await Task.find();
+    res.render('index',{tasks:tasks})
 });
 
 router.post('/task/add',async (req,res)=>{
@@ -13,7 +14,8 @@ router.post('/task/add',async (req,res)=>{
     const taskSaved = await task.save();
     console.log(taskSaved);
     //console.log(req.body);
-    res.send("Guardar");
+    //res.send("Guardar");
+    res.redirect('/')
 });
 
 router.get('/main',(req,res)=>{
