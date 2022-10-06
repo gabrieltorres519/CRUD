@@ -1,10 +1,34 @@
 <ul>
-    {{#each tasks}}
-    <li>
-        {{title}} <br>
-        {{description}}
-    </li>
-    <button>Editar</button>
-    <button>Eliminar</button>
-     {{/each}}
+
 </ul>
+
+
+<table>
+
+    <thead>
+        <tr>
+            {{!-- <th>N.</th> --}}
+            <th>Titulo</th>
+            <th>Descripción</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {{#each tasks}}
+        <tr>
+            <td>
+                {{title}}
+            </td>
+            <td>
+                {{description}}
+            <td>
+                <button>Realizado</button>
+                <button>Editar</button>
+                <button>Eliminar</button>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+
+</table>
