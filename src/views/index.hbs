@@ -1,25 +1,7 @@
 <h1>Index</h1>
 
-<form action="/task/add" method="POST">
-    <div>
-        <label for="title">Inserta titulo</label>
-        <input type="text" name="title" placeholder="Inserta titulo">
-    </div>
+{{> tasks/taskForm }}
+{{> tasks/taskTable }}
 
-    <div>
-        <label for="description">Descripción</label>
-        <textarea name="description" id="description" cols="30" rows="10" placeholder="Inserta una descripcion"></textarea>
-    </div>
-    <button type="submit">Guardar</button>
-</form>
 
-<ul>
-    <li></li>
-</ul>
-
-<ul>
-    {{#each tasks}}
-    <li>{{title}}</li>
-     {{/each}}
-</ul>
 
