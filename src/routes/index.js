@@ -31,8 +31,12 @@ router.get('/about',(req,res)=>{
     res.render('about')
 });
 
-router.get('/delete',(req,res)=>{
-    res.render('delete')
+router.get('/delete/:id',async(req,res)=>{
+    const {id} = req.params
+    await Task.findByIdAndDelete(id,req.body)
+    // console.log(req.body);
+    // res.send('Cambio recibido');
+    res.redirect('/')
 });
 
 router.get("/edit/:id",async(req,res)=>{
@@ -45,7 +49,7 @@ router.get("/edit/:id",async(req,res)=>{
 
 router.post("/edit/:id",async(req,res)=>{
     const {id} = req.params
-    await Task.findOneAndUpdate(id,req.body)
+    await Task.findByIdAndUpdate(id,req.body)
     // console.log(req.body);
     // res.send('Cambio recibido');
     res.redirect('/')
