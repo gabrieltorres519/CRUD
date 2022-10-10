@@ -35,8 +35,20 @@ router.get('/delete',(req,res)=>{
     res.render('delete')
 });
 
-router.get('/edit',(req,res)=>{
-    res.render('edit')
+router.get("/edit/:id",async(req,res)=>{
+    //console.log(req.params.id)
+  const task = await Task.findById(req.params.id).lean()
+
+   // res.render("edit");
+    res.render("edit",{task});
+});
+
+router.post("/edit/:id",async(req,res)=>{
+    const {id} = req.params
+    await Task.findOneAndUpdate(id,req.body)
+    // console.log(req.body);
+    // res.send('Cambio recibido');
+    res.redirect('/')
 });
 
 export default router;
